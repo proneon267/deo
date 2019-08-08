@@ -1,0 +1,4 @@
+---
+word: experience
+odia: ଅନୁଭୁତି
+---
