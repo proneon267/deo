@@ -63,13 +63,13 @@ body {
 </style>
 </head>
 <body>
-	<h2 style="display:flex;">proneon267 | DEO <span style="margin-left:auto" onclick="fooshow()">(?)</span></h2>
+	<h2 style="display:flex;">proneon267 | DEO <span style="margin-left:auto" onclick="fooshow('welp')">(?)</span></h2>
 	Copyright &copy; {{ site.time | date: '%Y' }} proneon267
 	
 	<div id="welp" class="help">
 		<h2 style="display:flex;">
 			Direct English to Odia substitute word finder
-			<div style="margin-left:auto;" onclick="fooclose()">X</div>
+			<div style="margin-left:auto;" onclick="fooclose('welp')">X</div>
 		</h2>
 <p>Start to type for a specific word inside the search bar and click on the appropriate word to see the meaning.</p>
 	</div>
@@ -85,6 +85,9 @@ body {
   </div>
 	{% for post in site.posts %}
 	<div id="{{ post.word }}" class="right">
+		<h2 style="display:flex;">
+			<div style="margin-left:auto;" onclick="fooclose('{{ post.word }}')">X</div>
+		</h2>
 		<h2>English: {{ post.word }}</h2>
 		<h2>Odia: {{ post.odia }}</h2>
 	</div>
@@ -121,11 +124,11 @@ function openWord(evt, word) {
   document.getElementById(word).style.display = "block";
   evt.currentTarget.className += " active";
 }
-	function fooclose(){
-		document.getElementById("welp").style.display = "none";
+	function fooclose(elem){
+		document.getElementById(elem).style.display = "none";
 	}
-	function fooshow(){
-		document.getElementById("welp").style.display = "block";
+	function fooshow(elem){
+		document.getElementById(elem).style.display = "block";
 	}
 </script>
 
