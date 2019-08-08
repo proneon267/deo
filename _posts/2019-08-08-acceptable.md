@@ -1,4 +1,4 @@
 ---
 word:acceptable
-odia: ମାନ୍ୟ, 
+odia: ମାନ୍ୟ, ଅଗ୍ରହଣୀୟ 
 ---
