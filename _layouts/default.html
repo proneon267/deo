@@ -63,13 +63,13 @@ body {
 </style>
 </head>
 <body>
-	<h2 style="display:flex;">proneon267 | DEO <span style="margin-left:auto" onclick="document.getElementById("help").style.display = "block";">(?)</span></h2>
+	<h2 style="display:flex;">proneon267 | DEO <span style="margin-left:auto" onclick="fooshow()">(?)</span></h2>
 	Copyright &copy; {{ site.time | date: '%Y' }} proneon267
 	
-	<div id="help" class="help">
+	<div id="welp" class="help">
 		<h2 style="display:flex;">
 			Direct English to Odia substitute word finder
-			<div style="margin-left:auto;" onclick="document.getElementById("help").style.display = "none";">X</div>
+			<div style="margin-left:auto;" onclick="fooclose()">X</div>
 		</h2>
 <p>Start to type for a specific word inside the search bar and click on the appropriate word to see the meaning.</p>
 	</div>
@@ -121,6 +121,12 @@ function openWord(evt, word) {
   document.getElementById(word).style.display = "block";
   evt.currentTarget.className += " active";
 }
+	function fooclose(){
+		document.getElementById("welp").style.display = "none";
+	}
+	function fooshow(){
+		document.getElementById("welp").style.display = "block";
+	}
 </script>
 
 </body>
