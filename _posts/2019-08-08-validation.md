@@ -1,0 +1,4 @@
+---
+word: validation
+odia: ବୈଧକରଣ
+---
