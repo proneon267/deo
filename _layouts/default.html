@@ -28,8 +28,10 @@ body {
 
 /* Right column (page content) */
 .right {
+  display: none;
   flex: 65%;
   padding: 15px;
+  background-color:#ddd;
 }
 
 /* Style the search box */
@@ -70,7 +72,7 @@ body {
     <input type="text" id="mySearch" onkeyup="find()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
       {% for post in site.posts %}
-	    <li><a href="#">{{ post.word }}</a></li>
+	    <li class="word"><a href="#" onclick="openWord(event, '{{ post.word }}')">{{ post.word }}</a></li>
       {% endfor %}
       <li><a href="#">HTML</a></li>
       <li><a href="#">CSS</a></li>
@@ -84,13 +86,19 @@ body {
     </ul>
   </div>
   
-  <div class="right" style="background-color:#ddd;">
+  <div class="right">
     <h2>Page Content</h2>
     <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
     <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
     <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
     <p>Some text..</p>
   </div>
+	{% for post in site.posts %}
+	<div id="{{ post.word }}" class="right">
+		<h2>{{ post.word }}</h2>
+		<h2>{{ post.odia }}</h2>
+	</div>
+	{% endfor %}
 </div>
 
 <script>
@@ -108,6 +116,20 @@ function find() {
       li[i].style.display = "none";
     }
   }
+}
+
+function openWord(evt, word) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("right");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("word");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(word).style.display = "block";
+  evt.currentTarget.className += " active";
 }
 </script>
 
