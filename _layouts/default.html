@@ -11,12 +11,10 @@ body {
   box-sizing: border-box;
 }
 
-/* Create a column layout with Flexbox */
 .row {
   display: flex;
 }
 
-/* Left column (menu) */
 .left {
   flex: 35%;
   padding: 15px 0;
@@ -27,7 +25,6 @@ body {
   padding-left: 8px;
 }
 
-/* Right column (page content) */
 .right {
   display: none;
   flex: 65%;
@@ -35,7 +32,6 @@ body {
   background-color:#ddd;
 }
 
-/* Style the search box */
 #mySearch {
   width: 100%;
   font-size: 18px;
@@ -43,7 +39,6 @@ body {
   border: 1px solid #ddd;
 }
 
-/* Style the navigation menu inside the left column */
 #myMenu {
   list-style-type: none;
   padding: 0;
@@ -79,8 +74,8 @@ body {
   </div>
 	{% for post in site.posts %}
 	<div id="{{ post.word }}" class="right">
-		<h2>English:{{ post.word }}</h2>
-		<h2>Odia:{{ post.odia }}</h2>
+		<h2>English: {{ post.word }}</h2>
+		<h2>Odia: {{ post.odia }}</h2>
 	</div>
 	{% endfor %}
 </div>
