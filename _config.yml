@@ -1,3 +1,5 @@
-name: odia
+name: deo
 markdown: kramdown
 permalink: /bog/:title
+plugins:
+  - jekyll-sitemap
