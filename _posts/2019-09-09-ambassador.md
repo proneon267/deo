@@ -1,0 +1,4 @@
+---
+word: ambassador
+odia: ରାଜଦୂତ 
+---
