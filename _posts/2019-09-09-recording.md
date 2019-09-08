@@ -1,0 +1,4 @@
+---
+word: recording
+odia: ଅଭିଲେଖନୀ
+---
