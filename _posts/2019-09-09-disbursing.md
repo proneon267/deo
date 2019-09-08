@@ -1,0 +1,4 @@
+---
+word: disbursing
+odia: ବିତରଣ 
+---
